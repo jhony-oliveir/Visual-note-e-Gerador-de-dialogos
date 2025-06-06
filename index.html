@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="scripts/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr"></script>
+</head>
+<body>
+	<div id="titulo" contenteditable="true"></div>
+	<div id="criarNodeFala" onclick="criarNodeFala()">
+		<p>Adicionar node</p>
+	</div>
+	<div id="configCores">
+  		<p>Cor de Fundo</p>
+		<div class="color-box-meu">
+			<div class="color-box" id="colorPicker1"></div>
+		</div>
+  		<p>Cor de Texto</p>
+		<div class="color-box-meu">
+			<div class="color-box" id="colorPicker2"></div>
+		</div>
+		<p>Carregar</p>
+		<select id="projetos" name="projetos" onchange="carregar(this)">
+
+		</select>
+		<div id="botaoSalvar" onclick="salvar()">
+  			<p>Salvar</p>
+		</div>
+		<div id="botaoApagar" onclick="apagarSave()">
+  			<p>Apagar</p>
+		</div>
+		<div id="botaoBaixar" onclick="baixarDialogos()">
+  			<p>Baixar</p>
+		</div>
+	</div>
+
+	<div id="corpo">
+		<div id="iniciadorEscala"></div>
+	</div>
+
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: rgb(31, 31, 31, 1.0);
+}
+#titulo{
+	width: 75vw;
+	margin-top: calc(1vh);
+	margin-left: 22vw;
+	color: white;
+	position: absolute;
+	font-size: 3vw;
+	outline: none;
+}
+#titulo:empty::before {
+    content: "Coloque o nome do projeto";
+    color: #888;
+    pointer-events: none;
+}
+#criarNodeFala{
+	width: 10vw;
+	height: 4vw;
+	margin-top: calc(5vh);
+	margin-left: calc(8vw);
+	background-color: rgb(87, 87, 87, 1.0);
+	color: white;
+	position: absolute;
+	user-select: none;
+	cursor: pointer;
+	border-radius: 0.5vw;
+}
+#criarNodeFala p{
+	margin-top: 2vw;
+	text-align: center;
+	transform: translateY(-50%);
+}
+#configCores{
+	width: 10vw;
+	margin-top: calc(14vh);
+	margin-left: calc(6vw);
+	padding-left: 2vw;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	background-color: rgb(87, 87, 87, 1.0);
+	position: absolute;
+	user-select: none;
+	color: white;
+	border-radius: 0.5vw;
+}
+#configCores .color-box-meu{
+	width: fit-content;
+	margin-top: 0.5vh;
+	margin-bottom: 2vh;
+	border: 1px solid black;
+	border-radius: 0.2vw;
+	background-color: #575757;
+	overflow: hidden;
+}
+#projetos{
+	width: calc(100% - 2vw);
+	background-color: rgb(87, 87, 87, 1.0);
+	color: white;
+}
+#botaoSalvar{
+	background-color: white;
+	width: calc(100% - 2vw);
+	margin-top: 2vh;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	cursor: pointer;
+	color: black;
+	text-align: center;
+	border-radius: 0.2vw;
+}
+#botaoApagar{
+	background-color: red;
+	width: calc(100% - 2vw);
+	margin-top: 2vh;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 0.2vw;
+}
+#botaoBaixar{
+	background-color: #0094FF;
+	width: calc(100% - 2vw);
+	margin-top: 2vh;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 0.2vw;
+}
+.color-box p{
+	white-space: nowrap;
+}
+#corpo{
+	min-width: 65vw;
+	width: auto;
+	position: absolute;
+	margin-top: calc(4vh + 4vw);
+	margin-left: 22vw;
+	min-height: calc(60vh - 4vw);
+	border-radius: 1vw;
+	border: 0.2vw solid black;
+	background-color: rgb(53, 60, 69, 1.0);
+	overflow: hidden;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	padding-right: 10vw;
+	padding-bottom: 30vh;
+	background-image: url("imagens/jogo da velha.png");
+	background-size: 3vw 3vw;
+	background-repeat: repeat;
+	background-attachment: local;
+}
+#corpo .node{
+	min-width: 180px;
+	margin-left: 2vw;
+	margin-top: 3vw;
+	background-color: rgb(87, 87, 87, 1.0);
+	position: absolute;
+	border: 0.2vw solid black;
+	border-radius: 0.5vw;
+	/*resize: both;*/
+	/*margin-right: 5vw;*/
+	/*display: inline-block;*/
+	user-select: none;
+	transition: border 1s;
+}
+#corpo .node:active{
+	border: 0.2vw solid green;
+	transition: border 0.3s;
+}
+#corpo #iniciadorEscala{
+	width: 1px;
+	height: 1px;
+	margin-left: 200vw;
+	margin-top: 200vw;
+	position: absolute;
+}
+#corpo .node .mover{
+	width: 180px;
+	height: 30px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: -35px;
+	position: absolute;
+	cursor: pointer;
+	-webkit-touch-callout: none; /* Desativar link de longa duração */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Padrão */
+	opacity: 0;
+	transition-duration: 1s;
+	background-image: url(imagens/mover2.png);
+	background-size: 30px 30px;
+	background-position-x: 75px;
+	background-repeat: no-repeat;
+}
+#corpo .node:hover .mover{
+	opacity: 1;
+	transition-duration: 0.3s;
+}
+#corpo .node .mover img{
+	opacity: 0;
+	transition-duration: 1s;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+#corpo .node:hover .mover img{
+	opacity: 1;
+	transition-duration: 0.3s;
+}
+#corpo .conectorE{
+	width: 13px;
+	height: 13px;
+	margin-left: -18px;
+	float: left;
+	border-radius: 50%;
+	background-color: rgb(87, 87, 87, 1.0);
+	border: 1px solid black;
+}
+#corpo .nodeTitulo{
+	text-align: center;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 7px;
+	margin-left: 7px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding-bottom: 13px;
+	padding-bottom: 7px;
+	outline: none;
+	color: white;
+	font-size: 20px;
+	width: calc(100% - 3vw);
+	border-radius: .25vw;
+}
+#corpo .nodeTitulo:empty::before {
+    content: "Titulo";
+    color: #888;
+    pointer-events: none;
+}
+#corpo .conteudo{
+	width: 100%;
+}
+#corpo .nodeTexto{
+	padding-left: 13px;
+	padding-right: 13px;
+	margin-bottom: 13px;
+	float: left;
+	width: 100%;
+}
+#corpo .nodeTexto textarea{
+	width: calc(100% - 26px);
+	resize: vertical;
+	background-color: rgb(100, 100, 100, 1.0);
+	color: white;
+	outline: none;
+    overflow: auto; /* Permitir rolagem */
+    scrollbar-width: none; /* Ocultar a barra de rolagem em navegadores que suportam */
+    -ms-overflow-style: none; /* Ocultar a barra de rolagem em navegadores da Microsoft */
+}
+#corpo .conectorS{
+	width: 100%;
+	max-width: 100%;
+}
+#corpo .apagar{
+	width: 13px;
+	height: 13px;
+	margin-left: 3px;
+	border-radius: 25%;
+	background-image: url(imagens/fechar.png);
+	background-size: 100% 100%;
+	cursor: pointer;
+	float: left;
+    margin-top: 3px;
+}
+#corpo .conectorSConteudo{
+	resize: vertical;
+	padding: 0;
+	margin: 0;
+	width: calc(100% - 30px);
+	height: 30px;
+	min-width: 8vw;
+	margin-left: 0.25vw;
+	float: left;
+	outline: none;
+	border: 0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+    overflow: auto;
+    scrollbar-width: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid black;
+    padding-left: 3px;
+    padding-top: 3px;
+    margin-bottom: 3px;
+}
+#corpo .conectorSConteudo:not(:placeholder-shown){
+	background-color: rgb(100, 100, 100, 1.0);
+}
+#corpo .nodeSaidaInvisivel{
+	width: 5px;
+	height: 5px;
+	float: right;
+}
+#corpo .nodeSaida{
+	width: 13px;
+	height: 13px;
+	margin-left: 10px;
+	background-color: rgb(87, 87, 87, 1.0);
+	border: 1px solid black;
+	cursor: pointer;
+	border-radius: 50%;
+	position: absolute;
+}
+#corpo .linhaLigada{
+	width: 0px;
+	height: 1px;
+	z-index: 0;
+	background-color: black;
+	margin-left: 7px;
+	margin-top: 7px;
+	position: absolute;
+	display: inline-block;
+	transform-origin: left center;
+	transform: skew(10deg, 0deg);
+}
+#corpo .addSaida{
+	width: 13px;
+	height: 13px;
+	border-radius: 25%;
+	background-color: green;
+	margin-left: 1vw;
+	margin-bottom: 1vw;
+	cursor: pointer;
+	margin-top: 3px;
+	float: left;
+}
+#corpo .resizer{
+	width: 1vw;
+	height: 1vw;
+	margin-left: 100%;
+	float: right;
+	background-image: url(imagens/resize.png);
+	background-size: 100% 100%;
+	cursor: se-resize;
+}
+.separador{
+	width: 100%;
+	height: 1px;
+}
+.separadorFL{
+	width: 100%;
+	height: 1px;
+	float: left;
+}
+#corpo .fechar{
+	width: 1vw;
+	height: 1vw;
+	margin-left: -2vw;
+	margin-top: -1.5vw;
+	cursor: pointer;
+	/*border-radius: 25%;*/
+	float: right;
+	background-image: url(imagens/fechar.png);
+	background-size: 100% 100%;
+}
+#corpo .fechar:hover{
+	width: 1.1vw;
+	height: 1.1vw;
+	margin-left: -2.05vw;
+	margin-top: -1.55vw;
+	/*filter: brightness(50%);*/
+}

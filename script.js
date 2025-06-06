@@ -956,7 +956,7 @@ function baixarDialogos(){
         dialogo = {
             id : node.id,
             from : pegarEntradasDialogo(entrada),
-            dialogo : node.getElementsByClassName('formatavel')[0].value,
+            dialogo : node.querySelector('.nodeTexto textarea').value,
             saidas : pegarSaidasDialogo(nodeSaidas)
         }
         dialogos[node.id] = dialogo;

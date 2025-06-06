@@ -143,7 +143,7 @@ body{
 	position: absolute;
 }
 #corpo .node .mover{
-	width: 180px;
+	width: 30px;
 	height: 30px;
 	margin-left: 50%;
 	transform: translateX(-50%);
@@ -159,7 +159,6 @@ body{
 	transition-duration: 1s;
 	background-image: url(imagens/mover2.png);
 	background-size: 30px 30px;
-	background-position-x: 75px;
 	background-repeat: no-repeat;
 }
 #corpo .node:hover .mover{
@@ -335,6 +334,7 @@ body{
 	float: right;
 	background-image: url(imagens/fechar.png);
 	background-size: 100% 100%;
+	z-index: 2;
 }
 #corpo .fechar:hover{
 	width: 1.1vw;

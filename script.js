@@ -662,7 +662,13 @@ $(document).on('mouseover', '.conectorE', nodeEntradaOverf);
 $(document).on('mouseout', '.conectorE', nodeEntradaOut);
 
 
-
+function substituirTextareasPorTexto() {
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(textarea => {
+    const texto = textarea.value;
+    textarea.textContent = texto; // coloca o conteúdo entre as tags <textarea>...</textarea>
+  });
+}
 
 
 var corpo = document.getElementById('corpo');
@@ -676,6 +682,8 @@ let ultimoConteudoSalvo = corpo.innerHTML;
 // Salva estado só se for diferente do anterior
 function salvarEstado() {
   const conteudoAtual = corpo.innerHTML;
+
+  substituirTextareasPorTexto()
 
   if (conteudoAtual !== ultimoConteudoSalvo) {
     historico = historico.slice(0, indiceAtual + 1);
@@ -835,6 +843,7 @@ $(document).on('mousedown', '.formatavel', function() {
 
 
 async function salvar(){
+    substituirTextareasPorTexto()
 
     if(document.getElementById("titulo").innerHTML != ''){
         saves = await carregarString();
